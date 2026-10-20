@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ver Viajes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='verviaje.css') }}">
+</head>
+<body>
+    <h1>Bienvenido, {{ session['nombre'] }}</h1>
+    <a href="/logout">Cerrar Sesión</a>
+    <a href="/viajes/nuevo">Crear Nuevo Viaje</a> | 
+
+    <h2>Lista de Viajes</h2>
+
+    {% for viaje in viajes %}
+        <div>
+            <h3>{{ viaje.destino }}</h3>
+            <p><strong>Fecha Inicio:</strong> {{ viaje.fecha_inicio }}</p>
+            <p><strong>Fecha Fin:</strong> {{ viaje.fecha_fin }}</p>
+            <p><strong>Itinerario:</strong> {{ viaje.Itinerario }}</p>
+            <a href="/viajes/editar/{{ viaje.destino }}">Editar</a>
+            <hr>
+        </div>
+    {% endfor %}
+</body>
+</html>

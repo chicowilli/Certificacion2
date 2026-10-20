@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Viaje</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='editarviaje.css') }}">
+</head>
+<body>
+    <h2>Editar Viaje</h2>
+    <a href="/dashboard">Volver</a><br><br>
+
+    <form action="/viajes/actualizar" method="POST">
+        <label>Destino:</label><br>
+        <input type="text" name="destino" value="{{ viaje.destino }}" readonly><br><br>
+
+        <label>Fecha Inicio:</label><br>
+        <input type="text" name="fecha_inicio" value="{{ viaje.fecha_inicio }}" required><br><br>
+
+        <label>Fecha Fin:</label><br>
+        <input type="text" name="fecha_fin" value="{{ viaje.fecha_fin }}" required><br><br>
+
+        <label>Itinerario:</label><br>
+        <textarea name="Itinerario" required>{{ viaje.Itinerario }}</textarea><br><br>
+
+        <button type="submit">Actualizar</button>
+    </form> 
+</body>
+</html>

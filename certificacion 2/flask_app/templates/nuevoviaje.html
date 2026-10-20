@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nuevo Viaje</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='nuevoviaje.css') }}">
+</head>
+<body>
+    <h2>Agregar Nuevo Viaje</h2>
+    <a href="/dashboard">Volver</a><br><br>
+
+   <form action="/viajes/crear" method="POST">
+    <label>Destino:</label><br>
+    <input type="text" name="destino" required><br><br>
+
+    <label>Fecha Inicio:</label><br>
+    <input type="date" name="fecha_inicio" required><br><br>
+
+    <label>Fecha Fin:</label><br>
+    <input type="date" name="fecha_fin" required><br><br>
+
+    <label>Itinerario:</label><br>
+    <textarea name="Itinerario" required></textarea><br><br> 
+
+    <button type="submit">Guardar Viaje</button>
+</form>
+</body>
+</html>
